@@ -1,0 +1,10 @@
+<hello name="{{ name }}"></hello>
+
+<ng-template #popTemplate>
+	<timepicker [(ngModel)]="mytime" [showMeridian]="false"></timepicker>
+</ng-template>
+<input [(ngModel)]="mytime" [popover]="popTemplate" [outsideClick]="true" placement="bottom" />
+
+<br/><br/>
+
+<pre class="alert alert-info">Time is: {{mytime}}</pre>
