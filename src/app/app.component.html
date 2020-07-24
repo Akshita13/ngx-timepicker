@@ -1,4 +1,4 @@
-<hello name="{{ name }}"></hello>
+<!-- <hello name="{{ name }}"></hello>
 
 <ng-template #popTemplate>
 	<timepicker [(ngModel)]="mytime" [showMeridian]="false"></timepicker>
@@ -7,4 +7,44 @@
 
 <br/><br/>
 
-<pre class="alert alert-info">Time is: {{mytime}}</pre>
+<pre class="alert alert-info">Time is: {{mytime}}</pre> -->
+
+
+<!-- <hello name="{{ name }}"></hello>
+
+<ng-template #popTemplate>
+	<timepicker [formControlName]="myControl" [showMeridian]="false"></timepicker>
+</ng-template>
+
+
+ <form [formGroup]="form">
+
+<input  [formControlName]="myControl" [popover]="popTemplate" [outsideClick]="true" placement="bottom" />
+ </form>
+
+<br/><br/>
+
+<pre class="alert alert-info">Time is: {{form.get('myControl').value}}</pre> -->
+
+<form [formGroup]="form">
+ <div class="form-group col-md-6 col-12 col-lg-4 col-xxl-3">
+      <input type="text" class="form-control" id="time" container="body"[popover]="popTemplate"
+        [popoverContext]="{ctrl:form.controls.dueTime}" [outsideClick]="true"
+        formControlName="dueTime" [value]="form.value.dueTime | ngbTimePicker" preventText />
+      <!-- Start -->
+      <ng-template #popTemplate let-ctrl="ctrl">
+        <ngb-timepicker #timePicker [formControl]="ctrl" [meridian]="true" [spinners]="true"></ngb-timepicker>
+      </ng-template>
+      <!-- End -->
+      <label class="floating-form-label">
+        Time
+        <span class="asterisk">*</span>
+      </label>
+      <label class="icon icon-clock date-picker-label text-gray mb-0" for="time"></label>
+      <div ngxErrors="dueTime" [isFormSubmitted]="isFormSubmitted">
+        <div ngxError="required" [when]="['touched','dirty']">
+          Due Time is Required
+        </div>
+      </div>
+    </div>
+</form>
