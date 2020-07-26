@@ -7,10 +7,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent  {
   name = 'Angular';
-  
-  timepickerVisible = false;
-  mytime: Date;
-
   form = new FormGroup({
     dueTime: new FormControl()
   });

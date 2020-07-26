@@ -25,10 +25,63 @@
 <br/><br/>
 
 <pre class="alert alert-info">Time is: {{form.get('myControl').value}}</pre> -->
+<!-- <ng-template #popTemplate>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+</ng-template>
+
+<div>
+  <div style="overflow-x: scroll;">
+    <button type="button" class="btn btn-danger"
+            [popover]="popTemplate"         
+            [placement]="'bottom'" 
+            [container]="'body'" 
+            [outsideClick]="true">
+      overflow-y: auto;
+    </button>
+  </div>
+
+  <div style="overflow-x: none;">
+    <button type="button" class="btn btn-success"
+            [popover]="popTemplate"         
+            [placement]="'bottom'" 
+            [container]="'body'" 
+            [outsideClick]="true">
+      overflow-y: none;
+    </button>
+  </div>
+</div> -->
+
+<!-- <form [formGroup]="form">
+   <input type="text" [popover]="popTemplate"
+        [popoverContext]="{ctrl:form.controls.dueTime}" [outsideClick]="true"
+        formControlName="dueTime" [value]="form.value.dueTime"  />
+      <!-- Start -->
+      <!-- <ng-template #popTemplate let-ctrl="ctrl">
+        <ngb-timepicker #timePicker [formControl]="ctrl" [meridian]="true" [spinners]="true"></ngb-timepicker>
+      </ng-template>  -->
+      <!-- End -->
+ <!-- <div class="form-group col-md-6 col-12 col-lg-4 col-xxl-3">
+     
+      <label class="floating-form-label">
+        Time
+        <span class="asterisk">*</span>
+      </label>
+      <label class="icon icon-clock date-picker-label text-gray mb-0" for="time"></label>
+      <div ngxErrors="dueTime" [isFormSubmitted]="isFormSubmitted">
+        <div ngxError="required" [when]="['touched','dirty']">
+          Due Time is Required
+        </div>
+      </div>
+    </div> -->
+<!-- </form> -->
 
 <form [formGroup]="form">
  <div class="form-group col-md-6 col-12 col-lg-4 col-xxl-3">
-      <input type="text" class="form-control" id="time" container="body"[popover]="popTemplate"
+      <input type="text" class="form-control" id="time" container="body"[popover]="popTemplate" placement="bottom"
         [popoverContext]="{ctrl:form.controls.dueTime}" [outsideClick]="true"
         formControlName="dueTime" [value]="form.value.dueTime | ngbTimePicker" preventText />
       <!-- Start -->
@@ -41,10 +94,12 @@
         <span class="asterisk">*</span>
       </label>
       <label class="icon icon-clock date-picker-label text-gray mb-0" for="time"></label>
-      <div ngxErrors="dueTime" [isFormSubmitted]="isFormSubmitted">
+      <!-- <div ngxErrors="dueTime" [isFormSubmitted]="isFormSubmitted">
         <div ngxError="required" [when]="['touched','dirty']">
           Due Time is Required
         </div>
-      </div>
+      </div> -->
     </div>
 </form>
+
+<pre class="alert alert-info">Time is: {{form.get('dueTime').value}}</pre>
