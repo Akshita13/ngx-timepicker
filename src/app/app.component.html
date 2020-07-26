@@ -81,7 +81,8 @@
 
 <form [formGroup]="form">
  <div class="form-group col-md-6 col-12 col-lg-4 col-xxl-3">
-      <input type="text" class="form-control" id="time" container="body"[popover]="popTemplate" placement="bottom"
+      <input type="text" class="form-control" id="time" container="body"
+      readonly [popover]="popTemplate" placement="bottom"
         [popoverContext]="{ctrl:form.controls.dueTime}" [outsideClick]="true"
         formControlName="dueTime" [value]="form.value.dueTime | ngbTimePicker" preventText />
       <!-- Start -->
