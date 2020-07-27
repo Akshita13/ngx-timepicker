@@ -16,7 +16,7 @@ export class NgbTimePickerPipe implements PipeTransform {
      */
 
     public transform(value: string): string | null {
-      
+      debugger
         if (!value) {
 
             return null;
