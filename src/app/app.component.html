@@ -87,7 +87,7 @@
         formControlName="dueTime" [value]="form.value.dueTime | ngbTimePicker" preventText />
       <!-- Start -->
       <ng-template #popTemplate let-ctrl="ctrl">
-        <ngb-timepicker #timePicker [formControl]="ctrl" [meridian]="true" [spinners]="true"></ngb-timepicker>
+        <ngb-timepicker #timePicker [formControl]="ctrl" [meridian]="true" [spinners]="true" [readonlyInputs]="true"></ngb-timepicker>
       </ng-template>
       <!-- End -->
       <label class="floating-form-label">
