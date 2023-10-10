@@ -6,7 +6,7 @@
     "@angular/common": "6.0.0",
     "@angular/compiler": "6.0.0",
     "@angular/compiler-cli": "10.0.5",
-    "@angular/core": "6.0.0",
+    "@angular/core": "10.2.5",
     "@angular/forms": "6.0.0",
     "@angular/localize": "10.0.5",
     "@angular/platform-browser": "6.0.0",
